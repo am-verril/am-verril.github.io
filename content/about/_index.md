@@ -3,6 +3,6 @@ title: "about"
 draft: false
 ---
 
-One day, a doctor will have to prescribe a patient (a doctor) to stop using AI for a prolonged period. 'No buts', the doctor will say.
+Soon will be the day, a doctor will have to prescribe a patient to detox from AI. 'No buts', the doctor will say.
 
-Built using Hugo, modifying from [Blank theme by Vimux](https://github.com/Vimux/blank) 
+Built using Hugo, modifying [Blank theme by Vimux](https://github.com/Vimux/blank) 
