@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Verril'
 theme = 'blank'
 
+enableGitInfo = true
+
 [markup.goldmark.renderer]
   unsafe = true
 
