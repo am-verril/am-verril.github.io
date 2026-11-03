@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>home on Verril</title><link>https://am-verril.github.io/</link><description>Recent content in home on Verril</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://am-verril.github.io/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>home on VERRIL</title>
+    <link>https://am-verril.github.io/</link>
+    <description>Recent content in home on VERRIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://am-verril.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A study of changing ends in badminton</title>
+      <link>https://am-verril.github.io/projects/change-ends-badminton/</link>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://am-verril.github.io/projects/change-ends-badminton/</guid>
+      <description>(This is a scrapped project, you&amp;rsquo;ll see why)&#xA;Or &amp;lsquo;why badminton should make changing ends more frequent&amp;rsquo; except nothing I&amp;rsquo;ve gathered can truly prove my argument&#xA;if you follow badminton, you must&amp;rsquo;ve seen a match where it is apparent that there is a court with advantageous drift. A third game is inevitable and the choice of ends from the coin flip in the beginning of the match becomes critical.&#xA;See:</description>
+    </item>
+    <item>
+      <title>The Mentarian website</title>
+      <link>https://am-verril.github.io/projects/the-mentarian-website/</link>
+      <pubDate>Sun, 21 Jul 2024 21:11:28 +0700</pubDate>
+      <guid>https://am-verril.github.io/projects/the-mentarian-website/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>web scraping locally</title>
+      <link>https://am-verril.github.io/projects/web-scraping-locally/</link>
+      <pubDate>Sun, 21 Jul 2024 21:11:28 +0700</pubDate>
+      <guid>https://am-verril.github.io/projects/web-scraping-locally/</guid>
+      <description>This is particularly useful when you&amp;rsquo;re using Selenium. Instead of having the code open the browser to access a link (very slow), having the code open a link from an existing browser is so much faster. But this, in my opinion, is just a side benefit of web scrapping locally. Where it really shines though is when you have a login page (e.g the online database for Indonesia&amp;rsquo;s M.C.G agency in my real-life scenario) and you do not want to go through the hassle of writing ten(s) lines of code just to do that (use this wisely)</description>
+    </item>
+    <item>
+      <title>Shuttle Foes: Badminton Discord bot [DEPRECATED]</title>
+      <link>https://am-verril.github.io/projects/badminton-discord-bot/</link>
+      <pubDate>Thu, 21 Jul 2022 21:11:28 +0700</pubDate>
+      <guid>https://am-verril.github.io/projects/badminton-discord-bot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>9aclass.net &#43; Zoom card</title>
+      <link>https://am-verril.github.io/projects/zoom-card/</link>
+      <pubDate>Tue, 21 Jul 2020 21:11:28 +0700</pubDate>
+      <guid>https://am-verril.github.io/projects/zoom-card/</guid>
+      <description>Remember online classes?&#xA;9aclass.net was built on Google Site, to serve as a &amp;lsquo;phonebook&amp;rsquo; with the meeting code, password, and link for each classroom listed.&#xA;The search directory was built to be really simple. If one needed to look up, the meeting link for, say, math class, one simply needed to type: 9aclass.net/math&#xA;But typically, students wouldn&amp;rsquo;t need to manually search the meeting details thanks to the Zoom card. But it is good to have the search function especially when the Zoom card fails to serve the right information (see later).</description>
+    </item>
+  </channel>
+</rss>

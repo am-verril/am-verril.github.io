@@ -1,21 +1,5 @@
 {{ define "main" }}
-	<main>
-		<!-- {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }} -->
-		<!-- {{ range $paginator.Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-		{{ partial "pagination.html" . }} -->
-	</main>
-<!-- {{ partial "sidebar.html" . }} -->
-<!-- <ul class="post-list">
-	{{ range .Site.RegularPages }}
-    <li>
-		<span>{{ .Date.Format "2006-01-02" }}</span>
-    	<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }}
-</ul> -->
-
-{{ .Content}}
-
+<main>
+	<div class="markdown-content">{{ .Content }}</div>
+</main>
 {{ end }}

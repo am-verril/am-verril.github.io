@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>9aclass.net &#43; Zoom card</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body>
+	<header>
+	<a class="site-title" href="https://am-verril.github.io/"><h1>VERRIL</h1></a>
+	
+	<nav class="navbar">
+		<ul>
+			
+			<li><a href="/about/">about</a></li>
+			
+			<li><a href="/projects/">projects</a></li>
+			
+			<li><a href="/links/">links</a></li>
+			
+		</ul>
+	</nav>
+	
+</header>
+
+	
+	<main>
+		
+		<article>
+			<h1>9aclass.net &#43; Zoom card</h1>
+			<time datetime="2020-07-21T21:11:28">2020</time>
+			<div class="markdown-content">
+				<p>Remember online classes?</p>
+<p>9aclass.net was built on Google Site, to serve as a &lsquo;phonebook&rsquo; with the meeting code, password, and link for each classroom listed.</p>
+<p>The search directory was built to be really simple. If one needed to look up, the meeting link for, say, math class, one simply needed to type:
+9aclass.net/math</p>
+<p>But typically, students wouldn&rsquo;t need to manually search the meeting details thanks to the Zoom card. But it is good to have the search function especially when the Zoom card fails to serve the right information (see later).</p>
+<p>The Zoom card is exactly what it sounds like: a tiny rectangle that will automatically generate the meeting code, password, link according to the schedule. See the demo below:</p>
+
+<style>
+   
+  #mainframe {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: black;
+    border: white 5px solid;
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-sizing: border-box;
+  }
+  #mainframe h4,
+  #mainframe h5,
+  #mainframe h6 {
+    background-color: black;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+  #mainframe a {
+    background-color: black;
+    color: white;
+  }
+  #mainframe a:hover {
+    color: lightblue;
+  }
+</style>
+
+<div id="mainframe">
+  <h4 id="dummy-id" tabindex="1"></h4>
+  <h5 id="dummy-password" tabindex="2"></h5>
+  <h6 id="dummy-course" tabindex="3"></h6>
+</div>
+
+<script>
+(function () {
+  
+  
+  
+  const fakeLink = (code) =>
+    '<a href="https://www.youtube.com/watch?v=NVGN7r1aAY0" target="_blank" rel="noopener">' + code + '</a>';
+
+  
+  const C = {
+    home: "4829175036",
+    a: "7310624958",
+    b: "2095837416",
+    c: "6158402973",
+    d: "9371058264",
+    e: "1846293705",
+    f: "5702961384",
+    g: "3984175620",
+    h: "8267410359",
+    i: "4413906872",
+    j: "7659283140",
+    k: "2538471069"
+  };
+
+  const info = [
+    
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.b), "pass-ccc", "Class B"], [fakeLink(C.c), "pass-ddd", "Class C"], [fakeLink(C.d), "pass-eee", "Class D"]],
+    
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.e), "pass-fff", "Class E"], [fakeLink(C.f), "pass-ggg", "Class F"], [fakeLink(C.g), "pass-hhh", "Class G"], [fakeLink(C.c), "pass-ddd", "Class C"]],
+    
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.b), "pass-ccc", "Class B"], [fakeLink(C.e), "pass-fff", "Class E"], [fakeLink(C.d), "pass-eee", "Class D"]],
+    
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.h), "pass-iii", "Class H"], [fakeLink(C.i), "pass-jjj", "Class I"], [fakeLink(C.j), "pass-kkk", "Class J"], [fakeLink(C.e), "pass-fff", "Class E"]],
+    
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.k), "pass-lll", "Class K"], [fakeLink(C.d), "pass-eee", "Class D"], [fakeLink(C.c), "pass-ddd", "Class C"]]
+  ];
+
+  
+  const periods = [
+    ["08:00", "08:20"],
+    ["08:30", "09:30"],
+    ["09:45", "10:45"],
+    ["11:00", "12:00"],
+    ["13:00", "14:00"]
+  ];
+
+  const elId = document.getElementById("dummy-id");
+  const elPw = document.getElementById("dummy-password");
+  const elCourse = document.getElementById("dummy-course");
+
+  function update() {
+    const now = new Date();
+    const day = now.getDay(); 
+    const t = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
+    
+    const today = info[(day === 0 || day === 6) ? 0 : day - 1];
+
+    
+    let current = 0;
+    for (let i = 0; i < periods.length; i++) {
+      if (t >= periods[i][0]) current = i;
+    }
+
+    elId.innerHTML = today[current][0];
+    elPw.innerHTML = today[current][1];
+    elCourse.innerHTML = today[current][2];
+  }
+
+  update();
+  setInterval(update, 60 * 1000); 
+})();
+</script>
+
+
+<p>+ a notification feature (if enabled) on the browser to remind students 5 minutes before class starts.</p>
+<hr>
+<p>Looking back, I wished the card wasn&rsquo;t incredibly hard-coded. If a Math class would be swapped with History class tomorrow, one would have to dig through the messy JS code to update the information and revert them back to the regular, weekly schedule (inside convoluted arrays) when the class has finished.</p>
+
+			</div>
+		</article>
+		
+			
+	</main>
+
+
+	<footer>
+	<p>&copy; 2026 <a href="https://am-verril.github.io/">VERRIL</a></p>
+</footer>
+
+</body>
+</html>

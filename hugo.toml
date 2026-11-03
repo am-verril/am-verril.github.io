@@ -1,9 +1,13 @@
 baseURL = 'https://am-verril.github.io/'
 languageCode = 'en-us'
-title = 'Verril'
+title = 'VERRIL'
 theme = 'blank'
 
 enableGitInfo = true
+
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -14,8 +18,8 @@ enableGitInfo = true
   weight = 1
 
 [[menu.main]]
-  name = "posts"
-  url = "/posts/"
+  name = "projects"
+  url = "/projects/"
   weight = 2
 
 [[menu.main]]

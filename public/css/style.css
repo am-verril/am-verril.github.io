@@ -3,10 +3,11 @@ html {
 }
 
 body {
-    max-width: 720px;
+    max-width: 680px;
     padding: 0 20px;
     margin: 0 auto;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 17px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -32,6 +33,7 @@ img {
     margin-bottom: 0;
 }
 
+
 header {
     width: 50%;
     margin: 0 auto;
@@ -49,9 +51,26 @@ header {
     text-decoration: none;
 }
 
+.navbar a:hover,
+.navbar a:focus-visible,
+.navbar a:active,
+.navbar a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-underline-offset: 0.2em;
+}
+
 
 a {
     color: black;
+}
+
+main > div > h1 {
+    text-align: center;
+}
+
+.markdown-content h1 {
+    font-size: 1.5em;
 }
 
 .post-list {
@@ -71,3 +90,16 @@ a {
     text-decoration: none;
 }
 
+pre,
+.highlight pre,
+pre.chroma {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Keep the page itself from stretching */
+.highlight {
+  max-width: 100%;
+  overflow-x: auto;
+}

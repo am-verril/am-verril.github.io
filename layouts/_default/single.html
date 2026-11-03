@@ -1,12 +1,20 @@
 {{ define "main" }}
 	<main>
+		{{ with .Params.link }}
+			<span id="project-redirect" data-url="{{ . }}"></span>
+			<script>
+				window.location.replace(document.getElementById("project-redirect").dataset.url);
+			</script>
+			<p><a href="{{ . }}">Continue to the project.</a></p>
+		{{ else }}
 		<article>
 			<h1>{{ .Title }}</h1>
-			<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "02 Jan 2006" }}</time>
-			<div>
+			<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ if eq .Section "projects" }}{{ .Date.Format "2006" }}{{ else }}{{ .Date.Format "02 Jan 2006" }}{{ end }}</time>
+			<div class="markdown-content">
 				{{ .Content }}
 			</div>
 		</article>
+		{{ end }}
 			<!-- {{ with .Params.tags }}
 			<div>
 				<ul id="tags">

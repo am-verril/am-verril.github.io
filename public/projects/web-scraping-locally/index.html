@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>web scraping locally</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body>
+	<header>
+	<a class="site-title" href="https://am-verril.github.io/"><h1>VERRIL</h1></a>
+	
+	<nav class="navbar">
+		<ul>
+			
+			<li><a href="/about/">about</a></li>
+			
+			<li><a href="/projects/">projects</a></li>
+			
+			<li><a href="/links/">links</a></li>
+			
+		</ul>
+	</nav>
+	
+</header>
+
+	
+	<main>
+		
+		<article>
+			<h1>web scraping locally</h1>
+			<time datetime="2024-07-21T21:11:28">2024</time>
+			<div class="markdown-content">
+				<p>This is particularly useful when you&rsquo;re using Selenium. Instead of having the code open the browser to access a link (very slow), having the code open a link from an existing browser is so much faster. But this, in my opinion, is just a side benefit of web scrapping locally. Where it really shines though is when you have a login page (e.g <a href="https://dataonline.bmkg.go.id/dataonline-home">the online database for Indonesia&rsquo;s M.C.G agency</a> in my real-life scenario) and you do not want to go through the hassle of writing ten(s) lines of code just to do that (use this wisely)</p>
+<h1 id="steps">Steps</h1>
+<ol>
+<li>
+<p>Have chrome installed in your computer. Make sure you know where it is installed.</p>
+</li>
+<li>
+<p>Run the following code on Command Prompt (or Powershell)</p>
+</li>
+</ol>
+<pre tabindex="0"><code>chrome.exe --remote-debugging-port=8989 --user-data-dir=&#34;C:\Users\[]\Documents\chrome\chromeprofile&#34;
+</code></pre><ol start="3">
+<li>In your web scraping program, have this code as your opening line:</li>
+</ol>
+<pre tabindex="0"><code>opt = Options()
+opt.add_experimental_option(&#34;debuggerAddress&#34;, &#34;localhost:8989&#34;)
+driver = webdriver.Chrome(options=opt)
+</code></pre><hr>
+<p>How I managed to do this without using AI cannot be explained. YouTube ftw.</p>
+
+			</div>
+		</article>
+		
+			
+	</main>
+
+
+	<footer>
+	<p>&copy; 2026 <a href="https://am-verril.github.io/">VERRIL</a></p>
+</footer>
+
+</body>
+</html>

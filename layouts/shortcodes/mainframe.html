@@ -1,0 +1,112 @@
+<!-- ============ MAINFRAME WIDGET (all data is fake) ============ -->
+<style>
+  /* Everything is scoped under #mainframe so it won't affect the rest of your site */
+  #mainframe {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: black;
+    border: white 5px solid;
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-sizing: border-box;
+  }
+  #mainframe h4,
+  #mainframe h5,
+  #mainframe h6 {
+    background-color: black;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+  #mainframe a {
+    background-color: black;
+    color: white;
+  }
+  #mainframe a:hover {
+    color: lightblue;
+  }
+</style>
+
+<div id="mainframe">
+  <h4 id="dummy-id" tabindex="1"></h4>
+  <h5 id="dummy-password" tabindex="2"></h5>
+  <h6 id="dummy-course" tabindex="3"></h6>
+</div>
+
+<script>
+(function () {
+  // ---------- FAKE SCHEDULE DATA ----------
+  // Each entry: [link html, fake password, subject name]
+  // Index 0 = Monday ... 4 = Friday, 5 periods per day
+  const fakeLink = (code) =>
+    '<a href="https://www.youtube.com/watch?v=NVGN7r1aAY0" target="_blank" rel="noopener">' + code + '</a>';
+
+  // Pseudo 10-digit codes
+  const C = {
+    home: "4829175036",
+    a: "7310624958",
+    b: "2095837416",
+    c: "6158402973",
+    d: "9371058264",
+    e: "1846293705",
+    f: "5702961384",
+    g: "3984175620",
+    h: "8267410359",
+    i: "4413906872",
+    j: "7659283140",
+    k: "2538471069"
+  };
+
+  const info = [
+    // MONDAY
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.b), "pass-ccc", "Class B"], [fakeLink(C.c), "pass-ddd", "Class C"], [fakeLink(C.d), "pass-eee", "Class D"]],
+    // TUESDAY
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.e), "pass-fff", "Class E"], [fakeLink(C.f), "pass-ggg", "Class F"], [fakeLink(C.g), "pass-hhh", "Class G"], [fakeLink(C.c), "pass-ddd", "Class C"]],
+    // WEDNESDAY
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.b), "pass-ccc", "Class B"], [fakeLink(C.e), "pass-fff", "Class E"], [fakeLink(C.d), "pass-eee", "Class D"]],
+    // THURSDAY
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.h), "pass-iii", "Class H"], [fakeLink(C.i), "pass-jjj", "Class I"], [fakeLink(C.j), "pass-kkk", "Class J"], [fakeLink(C.e), "pass-fff", "Class E"]],
+    // FRIDAY
+    [[fakeLink(C.home), "pass-aaa", "Homeroom"], [fakeLink(C.a), "pass-bbb", "Class A"], [fakeLink(C.k), "pass-lll", "Class K"], [fakeLink(C.d), "pass-eee", "Class D"], [fakeLink(C.c), "pass-ddd", "Class C"]]
+  ];
+
+  // Period times: [start, end] in 24h "HH:MM"
+  const periods = [
+    ["08:00", "08:20"],
+    ["08:30", "09:30"],
+    ["09:45", "10:45"],
+    ["11:00", "12:00"],
+    ["13:00", "14:00"]
+  ];
+
+  const elId = document.getElementById("dummy-id");
+  const elPw = document.getElementById("dummy-password");
+  const elCourse = document.getElementById("dummy-course");
+
+  function update() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday ... 6 = Saturday
+    const t = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+
+    // Weekends reuse Monday's entries so something is always shown
+    const today = info[(day === 0 || day === 6) ? 0 : day - 1];
+
+    // Latest period that has already started (falls back to the first one)
+    let current = 0;
+    for (let i = 0; i < periods.length; i++) {
+      if (t >= periods[i][0]) current = i;
+    }
+
+    elId.innerHTML = today[current][0];
+    elPw.innerHTML = today[current][1];
+    elCourse.innerHTML = today[current][2];
+  }
+
+  update();
+  setInterval(update, 60 * 1000); // refresh every minute
+})();
+</script>
+<!-- ============ END WIDGET ============ -->

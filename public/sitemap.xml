@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://am-verril.github.io/about/</loc></url><url><loc>https://am-verril.github.io/categories/</loc></url><url><loc>https://am-verril.github.io/</loc></url><url><loc>https://am-verril.github.io/posts/</loc></url><url><loc>https://am-verril.github.io/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://am-verril.github.io/projects/change-ends-badminton/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/projects/</loc>
+    <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/projects/the-mentarian-website/</loc>
+    <lastmod>2024-07-21T21:11:28+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/projects/web-scraping-locally/</loc>
+    <lastmod>2024-07-21T21:11:28+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/projects/badminton-discord-bot/</loc>
+    <lastmod>2022-07-21T21:11:28+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/projects/zoom-card/</loc>
+    <lastmod>2020-07-21T21:11:28+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/about/</loc>
+    <lastmod>2026-08-04T21:28:35+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/categories/</loc>
+  </url><url>
+    <loc>https://am-verril.github.io/</loc>
+    <lastmod>2026-07-26T16:55:35+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/links/</loc>
+    <lastmod>2026-08-13T19:12:16+07:00</lastmod>
+  </url><url>
+    <loc>https://am-verril.github.io/tags/</loc>
+  </url>
+</urlset>
