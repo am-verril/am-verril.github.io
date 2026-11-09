@@ -1,11 +1,20 @@
 html {
     height: 100%;
+    background-color: white;
+    background-image:
+        linear-gradient(to right, red 0 14.2857%, orange 14.2857% 28.5714%, yellow 28.5714% 42.8571%, green 42.8571% 57.1428%, indigo 57.1428% 71.4285%, violet 71.4285% 85.7142%, darkgray 85.7142% 100%),
+        linear-gradient(to right, darkgray 0 14.2857%, violet 14.2857% 28.5714%, indigo 28.5714% 42.8571%, green 42.8571% 57.1428%, yellow 57.1428% 71.4285%, orange 71.4285% 85.7142%, red 85.7142% 100%);
+    background-position: left top, right top;
+    background-size: max(0px, calc(50vw - 360px)) 100vh, max(0px, calc(50vw - 360px)) 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
     max-width: 680px;
     padding: 0 20px;
     margin: 0 auto;
+    background: white;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 17px;
     min-height: 100vh;
@@ -102,4 +111,53 @@ pre.chroma {
 .highlight {
   max-width: 100%;
   overflow-x: auto;
+}
+
+@media (max-width: 720px) {
+    html {
+        background-image:
+            linear-gradient(to right, red, orange, yellow, green, indigo, violet, darkgray),
+            linear-gradient(to right, darkgray, violet, indigo, green, yellow, orange, red);
+        background-position: left top, right top;
+        background-size: 50vw 100vh, 50vw 100vh;
+    }
+
+    body {
+        background: transparent;
+    }
+
+    body,
+    body *:not(#mainframe):not(#mainframe *) {
+        color: black !important;
+    }
+
+    body :is(h1, h2, h3, h4, h5, h6, p, a, li, blockquote, td, th, dt, dd, figcaption, time, code, pre, .highlight):not(#mainframe):not(#mainframe *) {
+        background-color: white;
+    }
+
+    .navbar a:hover,
+    .navbar a:focus-visible,
+    .navbar a:active,
+    .navbar a[aria-current="page"] {
+        text-decoration-color: black;
+    }
+}
+
+@media (min-width: 721px) {
+    body {
+        background: white;
+    }
+
+    body,
+    body *:not(#mainframe):not(#mainframe *) {
+        color: black;
+        background-color: transparent;
+    }
+
+    .site-title {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 12px;
+    }
 }
