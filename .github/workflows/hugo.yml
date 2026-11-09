@@ -29,10 +29,10 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: '0.121.1'
-          extended: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes hugo
+          hugo version
 
       - name: Setup Pages
         id: pages
